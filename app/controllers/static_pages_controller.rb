@@ -1,5 +1,8 @@
 class StaticPagesController < ApplicationController
-  def home
-    
+  def index
+    client = Client.new
+    if params.present?
+      @collections = client.collections([:id])
+    end
   end
 end
