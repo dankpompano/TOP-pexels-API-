@@ -1,11 +1,14 @@
-<%= form_with model: @client do |f| %>
+<%= form_with url: root_path, method: :get do |f| %>
   <div>
     <%= f.label :id %>
     <%= f.text_field :id %>
     <%= f.submit "Show it" %>
   </div>
 
-  <%= if @collections.present? %>
-
+  <% if @photo.present? %>
+    <p> 
+      <%= image_tag @photo %>
+    </p>
   <% end %>
 <% end %>
+
